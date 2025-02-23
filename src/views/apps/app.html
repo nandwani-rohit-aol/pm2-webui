@@ -224,7 +224,7 @@
   
 
   async function fetchLogs(log_type, next_key){
-    const response = await fetch(`/api/apps/<%= app.name %>/logs/${log_type}${next_key?`?nextKey=${next_key}`: ''}`)
+    const response = await fetch(`/pm2dashboard/api/apps/<%= app.name %>/logs/${log_type}${next_key?`?nextKey=${next_key}`: ''}`)
     const data = await response.json()
     if(data && data.logs){
       return data.logs
